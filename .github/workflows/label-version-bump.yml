@@ -23,11 +23,30 @@ jobs:
                   token: ${{ secrets.POSTHOG_BOT_GITHUB_TOKEN }}
                   fetch-depth: 0
 
-            - name: Setup Node.js lts/*
+            - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
                 node-version: lts/*
-                cache: 'yarn'
+                cache: 'pnpm'
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                version: 8
+                run_install: false
+
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                path: ${{ env.STORE_PATH }}
+                key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                restore-keys: |
+                  ${{ runner.os }}-pnpm-store-
 
             - name: Detect version bump type
               id: bump-type
@@ -70,8 +89,8 @@ jobs:
                 OLD_VERSION: ${{ env.OLD_VERSION }}
                 NEW_VERSION: ${{ env.NEW_VERSION }}
 
-            - name: Update the lockfile
-              run: yarn install
+            - name: Install Dependencies
+              run: pnpm install --frozen-lockfile
 
             # then commit back to main,
             # needs to be able to bypass the branch protection
