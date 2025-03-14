@@ -36,7 +36,6 @@ jobs:
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
-          name: pnpm-store
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
@@ -46,7 +45,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Project
-        run: NODE_OPTIONS='--max-old-space-size=4096' pnpm build:all
+        run: pnpm build:all
 
       - name: Check types
         run: pnpm check-types
