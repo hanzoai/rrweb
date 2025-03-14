@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite build --watch",
-    "build": "yarn turbo run prepublish",
+    "build": "pnpm turbo run prepublish",
     "check-types": "tsc -noEmit",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "prepublish": "tsc -noEmit && vite build",
-    "lint": "yarn eslint src/**/*.ts"
+    "lint": "pnpm eslint src/**/*.ts"
   },
   "keywords": [
     "rrweb",
@@ -56,6 +56,6 @@
     "cssstyle": "^2.3.0",
     "nwsapi": "2.2.0",
     "@posthog/rrdom": "*",
-    "@posthog/rrweb-types": "*"
+    "@posthog/rrweb-types": "workspace:*"
   }
 }

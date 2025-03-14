@@ -45,8 +45,8 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@posthog/rrweb-types": "*",
-    "@posthog/rrweb": "*"
+    "@posthog/rrweb-types": "workspace:*",
+    "@posthog/rrweb": "workspace:*"
   },
   "browserslist": [
     "supports es6-class"

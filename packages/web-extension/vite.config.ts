@@ -44,7 +44,7 @@ function useSpecialFormat(
  * Get the extension version based on the rrweb version.
  */
 function getExtensionVersion(rrwebVersion: string): string {
-  const parsedVersion = parse(rrwebVersion.replace('^', '')) || parse('0.0.0');
+  const parsedVersion = parse(rrwebVersion.replace('^', '')) || parse('0.0.1');
 
   if (!parsedVersion) {
     throw new Error('Invalid version format');
@@ -52,14 +52,13 @@ function getExtensionVersion(rrwebVersion: string): string {
 
   if (parsedVersion.prerelease.length > 0) {
     // If it's a pre-release version like alpha or beta, strip the pre-release identifier
-    return `${parsedVersion.major}.${parsedVersion.minor}.${
-      parsedVersion.patch
-    }.${parsedVersion.prerelease[1] || 0}`;
+    return `${parsedVersion.major}.${parsedVersion.minor}.${parsedVersion.patch
+      }.${parsedVersion.prerelease[1] || 0}`;
   } else if (rrwebVersion === '2.0.0') {
     // This version has already been released as the first version. We need to add a patch version to it to avoid publishing conflicts.
     return '2.0.0.100';
   } else {
-    return rrwebVersion === '*' ? '0.0.0' : rrwebVersion;
+    return rrwebVersion === '*' ? '0.0.1' : rrwebVersion;
   }
 }
 
@@ -127,11 +126,11 @@ export default defineConfig({
       'iife',
     ),
     process.env.ZIP === 'true' &&
-      zip({
-        inDir: `dist/${process.env.TARGET_BROWSER || 'chrome'}`,
-        outDir: 'dist',
-        outFileName: `${process.env.TARGET_BROWSER || 'chrome'}.zip`,
-      }),
+    zip({
+      inDir: `dist/${process.env.TARGET_BROWSER || 'chrome'}`,
+      outDir: 'dist',
+      outFileName: `${process.env.TARGET_BROWSER || 'chrome'}.zip`,
+    }),
   ],
   resolve: {
     alias: {

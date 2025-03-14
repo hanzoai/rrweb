@@ -25,13 +25,13 @@
   },
   "references": [
     {
+      "path": "../types"
+    },
+    {
       "path": "../replay"
     },
     {
       "path": "../packer"
-    },
-    {
-      "path": "../types"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "@posthog/rrweb-web-extension",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The web extension of rrweb which helps to run rrweb on any website out of box",
   "author": "rrweb-io",
   "license": "MIT",
@@ -14,11 +14,10 @@
     "pack:chrome": "cross-env TARGET_BROWSER=chrome ZIP=true vite build",
     "pack:firefox": "cross-env TARGET_BROWSER=firefox ZIP=true vite build",
     "check-types": "tsc -noEmit",
-    "build": "npm run pack:chrome && npm run pack:firefox",
-    "prepublish": "yarn build"
+    "build": "pnpm run pack:chrome && pnpm run pack:firefox",
+    "prepublish": "pnpm build"
   },
   "devDependencies": {
-    "@posthog/rrweb-types": "*",
     "@types/chrome": "^0.0.287",
     "@types/react-dom": "^18.0.6",
     "@types/semver": "^7.5.8",
@@ -44,7 +43,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.1",
-    "@posthog/rrweb": "*",
-    "@posthog/rrweb-player": "*"
+    "@posthog/rrweb-types": "workspace:*",
+    "@posthog/rrweb": "workspace:*",
+    "@posthog/rrweb-player": "workspace:*"
   }
 }

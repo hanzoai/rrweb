@@ -2,7 +2,6 @@
   "name": "@posthog/rrweb-player",
   "version": "0.0.0",
   "devDependencies": {
-    "@posthog/rrweb-types": "*",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
@@ -19,18 +18,19 @@
     "vite": "^5.3.1"
   },
   "dependencies": {
-    "@tsconfig/svelte": "^1.0.0",
-    "@posthog/rrweb-replay": "*",
-    "@posthog/rrweb-packer": "*"
+    "@posthog/rrweb-types": "workspace:*",
+    "@posthog/rrweb-replay": "workspace:*",
+    "@posthog/rrweb-packer": "workspace:*",
+    "@tsconfig/svelte": "^1.0.0"
   },
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "pnpm build",
     "start": "vite",
     "check-types": "svelte-check --tsconfig ./tsconfig.json",
-    "prepublish": "yarn build",
-    "lint": "yarn eslint src/**/*.ts"
+    "prepublish": "pnpm build",
+    "lint": "pnpm eslint src/**/*.ts"
   },
   "description": "rrweb's replayer UI",
   "main": "./dist/rrweb-player.umd.cjs",

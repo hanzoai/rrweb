@@ -23,10 +23,10 @@
   ],
   "references": [
     {
-      "path": "../rrweb-player"
+      "path": "../types"
     },
     {
-      "path": "../types"
+      "path": "../rrweb-player"
     }
   ]
 }

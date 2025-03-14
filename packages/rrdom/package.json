@@ -29,7 +29,7 @@
     },
     "scripts": {
         "dev": "vite build --watch",
-        "build": "yarn turbo run prepublish",
+        "build": "pnpm turbo run prepublish",
         "check-types": "tsc -noEmit",
         "test": "vitest run",
         "test:watch": "vitest",
@@ -37,7 +37,6 @@
         "lint": "yarn eslint src/**/*.ts"
     },
     "devDependencies": {
-        "@posthog/rrweb-types": "*",
         "@types/puppeteer": "^5.4.4",
         "@typescript-eslint/eslint-plugin": "^5.23.0",
         "@typescript-eslint/parser": "^5.23.0",
@@ -48,6 +47,7 @@
         "vite-plugin-dts": "^3.9.1"
     },
     "dependencies": {
-        "@posthog/rrweb-snapshot": "*"
+        "@posthog/rrweb-types": "workspace:*",
+        "@posthog/rrweb-snapshot": "workspace:*"
     }
 }

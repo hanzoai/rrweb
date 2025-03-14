@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "fflate": "^0.4.4",
-    "@posthog/rrweb-types": "*"
+    "@posthog/rrweb-types": "workspace:*"
   },
   "browserslist": [
     "supports es6-class"
