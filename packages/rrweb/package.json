@@ -69,11 +69,11 @@
         "ignore-styles": "^5.0.1",
         "inquirer": "^9.0.0",
         "jest-image-snapshot": "^6.2.0",
-        "puppeteer": "^20.9.0",
+        "puppeteer": "24.10.0",
         "simple-peer-light": "^9.10.0",
         "ts-node": "^10.9.1",
         "tslib": "^2.3.1",
-        "typescript": "^5.4.5",
+        "typescript": "^5.8.3",
         "vite": "^6.2.0",
         "vite-plugin-dts": "^3.9.1"
     },
