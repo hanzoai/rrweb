@@ -26,7 +26,7 @@ export async function launchPuppeteer(
       width: 1920,
       height: 1080,
     },
-    args: ['--no-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
     ...options,
   });
 }
@@ -60,7 +60,7 @@ export const startServer = (defaultPort = 3030) =>
 
       let pathname = path.join(__dirname, sanitizePath);
       if (/^\/rrweb.*\.c?js.*/.test(sanitizePath)) {
-        pathname = path.join(__dirname, `../dist/main`, sanitizePath);
+        pathname = path.join(__dirname, `../dist`, sanitizePath);
       }
 
       try {
@@ -250,18 +250,18 @@ export function stringifySnapshots(snapshots: eventWithTime[]): string {
 
 function stripBlobURLsFromAttributes(node: {
   attributes: {
-    src?: string;
+    [key: string]: any;
   };
 }) {
-  if (
-    'src' in node.attributes &&
-    node.attributes.src &&
-    typeof node.attributes.src === 'string' &&
-    node.attributes.src.startsWith('blob:')
-  ) {
-    node.attributes.src = node.attributes.src
-      .replace(/[\w-]+$/, '...')
-      .replace(/:[0-9]+\//, ':xxxx/');
+  for (const attr in node.attributes) {
+    if (
+      typeof node.attributes[attr] === 'string' &&
+      node.attributes[attr].startsWith('blob:')
+    ) {
+      node.attributes[attr] = node.attributes[attr]
+        .replace(/[\w-]+$/, '...')
+        .replace(/:[0-9]+\//, ':xxxx/');
+    }
   }
 }
 
@@ -301,6 +301,7 @@ function stringifyDomSnapshot(mhtml: string): string {
 
 export async function assertSnapshot(
   snapshotsOrPage: eventWithTime[] | puppeteer.Page,
+  useOwnFile: boolean | string = false,
 ) {
   let snapshots: eventWithTime[];
   if (!Array.isArray(snapshotsOrPage)) {
@@ -318,7 +319,21 @@ export async function assertSnapshot(
   }
 
   expect(snapshots).toBeDefined();
-  expect(stringifySnapshots(snapshots)).toMatchSnapshot();
+
+  if (useOwnFile) {
+    // e.g. 'mutation.test.ts > mutation > add elements at once'
+    const long_fname = expect.getState().currentTestName.split('/').pop();
+    const file = long_fname.split(' > ')[0].replace('.test.ts', '');
+    if (typeof useOwnFile !== 'string') {
+      useOwnFile = long_fname.substring(long_fname.indexOf(' > ') + 3);
+    }
+    useOwnFile = useOwnFile.replace(/ > /g, '.').replace(/\s/g, '_');
+
+    const fname = `./__${file}.snapshots__/${useOwnFile}.json`;
+    expect(stringifySnapshots(snapshots)).toMatchFileSnapshot(fname);
+  } else {
+    expect(stringifySnapshots(snapshots)).toMatchSnapshot();
+  }
 }
 
 export function replaceLast(str: string, find: string, replace: string) {
@@ -555,6 +570,98 @@ export const sampleStyleSheetRemoveEvents: eventWithTime[] = [
           id: 4,
         },
       ],
+      adds: [],
+    },
+    timestamp: now + 2000,
+  },
+];
+
+export const sampleRemoteStyleSheetEvents: eventWithTime[] = [
+  {
+    type: EventType.DomContentLoaded,
+    data: {},
+    timestamp: now,
+  },
+  {
+    type: EventType.Load,
+    data: {},
+    timestamp: now + 1000,
+  },
+  {
+    type: EventType.Meta,
+    data: {
+      href: 'http://localhost',
+      width: 1000,
+      height: 800,
+    },
+    timestamp: now + 1000,
+  },
+  {
+    type: EventType.FullSnapshot,
+    data: {
+      node: {
+        type: 0,
+        childNodes: [
+          {
+            type: 2,
+            tagName: 'html',
+            attributes: {},
+            childNodes: [
+              {
+                type: 2,
+                tagName: 'head',
+                attributes: {},
+                childNodes: [
+                  {
+                    type: 2,
+                    tagName: 'link',
+                    attributes: {
+                      rel: 'stylesheet',
+                      href: '',
+                    },
+                    childNodes: [],
+                    id: 4,
+                  },
+                ],
+                id: 3,
+              },
+              {
+                type: 2,
+                tagName: 'body',
+                attributes: {},
+                childNodes: [],
+                id: 6,
+              },
+            ],
+            id: 2,
+          },
+        ],
+        id: 1,
+      },
+      initialOffset: {
+        top: 0,
+        left: 0,
+      },
+    },
+    timestamp: now + 1000,
+  },
+  {
+    type: EventType.IncrementalSnapshot,
+    data: {
+      source: IncrementalSource.Mutation,
+      texts: [],
+      attributes: [
+        {
+          id: 4,
+          attributes: {
+            href: null,
+            rel: null,
+            _cssText:
+              '.OverlayDrawer-modal-187 { }.OverlayDrawer-paper-188 { width: 100%; }@media (min-width: 48em) {\n  .OverlayDrawer-paper-188 { width: 38rem; }\n}@media (min-width: 48em) {\n}@media (min-width: 48em) {\n}',
+          },
+        },
+      ],
+      removes: [],
       adds: [],
     },
     timestamp: now + 2000,
