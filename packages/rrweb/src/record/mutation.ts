@@ -9,7 +9,7 @@ import {
   isNativeShadowDom,
   getInputType,
   toLowerCase,
-} from 'rrweb-snapshot';
+} from '@posthog/rrweb-snapshot';
 import type { observerParam, MutationBufferParam } from '../types';
 import type {
   mutationRecord,
@@ -17,7 +17,7 @@ import type {
   attributeCursor,
   removedNodeMutation,
   addedNodeMutation,
-} from '@rrweb/types';
+} from '@posthog/rrweb-types';
 import {
   isBlocked,
   isAncestorRemoved,
@@ -30,7 +30,7 @@ import {
   getShadowHost,
   closestElementOfNode,
 } from '../utils';
-import dom from '@rrweb/utils';
+import dom from '@posthog/rrweb-utils';
 
 const moveKey = (id: number, parentId: number) => `${id}@${parentId}`;
 
@@ -276,19 +276,6 @@ export default class MutationBuffer {
         continue;
       }
 
-      let cssCaptured = false;
-      if (n.nodeType === Node.TEXT_NODE) {
-        const parentTag = (parentNode as Element).tagName;
-        if (parentTag === 'TEXTAREA') {
-          // genTextAreaValueMutation already called via parent
-          continue;
-        } else if (parentTag === 'STYLE' && addedIds.has(parentId)) {
-          // css content will be recorded via parent's _cssText attribute when
-          // mutation adds entire <style> element
-          cssCaptured = true;
-        }
-      }
-
       let nextId = nextSibling ? this.mirror.getId(nextSibling) : null;
       while (nextId === IGNORED_NODE) {
         nextSibling = nextSibling && nextSibling.nextSibling;
@@ -345,7 +332,6 @@ export default class MutationBuffer {
         onStylesheetLoad: (link, childSn) => {
           this.stylesheetManager.attachLinkElement(link, childSn);
         },
-        cssCaptured,
       });
       if (sn) {
         adds.push({
