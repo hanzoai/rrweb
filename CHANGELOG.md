@@ -1,3 +1,8 @@
+## 0.0.25 - 2025-08-05
+
+- fix(rrweb-snapshot): inserting doctype element (#88)
+- fix: use node.baseURI for stringifying stylesheet hrefs (#87)
+
 ## 0.0.24 - 2025-07-18
 
 - fix: in applyStyleDeclaration during replay we `as unknown as` and explode (#86)
