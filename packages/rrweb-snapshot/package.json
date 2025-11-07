@@ -36,6 +36,16 @@
                 "types": "./dist/index.d.cts",
                 "default": "./dist/rrweb-snapshot.umd.cjs"
             }
+        },
+        "./record": {
+            "import": {
+                "types": "./dist/record.d.ts",
+                "default": "./dist/rrweb-snapshot.record.js"
+            },
+            "require": {
+                "types": "./dist/record.d.cts",
+                "default": "./dist/rrweb-snapshot.record.cjs"
+            }
         }
     },
     "files": [
