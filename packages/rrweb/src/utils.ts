@@ -10,12 +10,12 @@ import type {
   textMutation,
   IMirror,
 } from '@posthog/rrweb-types';
-import type { Mirror, SlimDOMOptions } from '@posthog/rrweb-snapshot';
+import type { SlimDOMOptions } from '@posthog/rrweb-snapshot/record';
 import {
   isShadowRoot,
   IGNORED_NODE,
   classMatchesRegex,
-} from '@posthog/rrweb-snapshot';
+} from '@posthog/rrweb-snapshot/record';
 import { RRNode, RRIFrameElement, BaseRRNode } from '@posthog/rrdom';
 import dom from '@posthog/rrweb-utils';
 
@@ -235,13 +235,13 @@ export function isBlocked(
   return false;
 }
 
-export function isSerialized(n: Node, mirror: Mirror): boolean {
+export function isSerialized(n: Node, mirror: IMirror<Node>): boolean {
   return mirror.getId(n) !== -1;
 }
 
 export function isIgnored(
   n: Node,
-  mirror: Mirror,
+  mirror: IMirror<Node>,
   slimDOMOptions: SlimDOMOptions,
 ): boolean {
   if ((n as Element).tagName === 'TITLE' && slimDOMOptions.headTitleMutations) {
@@ -255,7 +255,10 @@ export function isIgnored(
   return mirror.getId(n) === IGNORED_NODE;
 }
 
-export function isAncestorRemoved(target: Node, mirror: Mirror): boolean {
+export function isAncestorRemoved(
+  target: Node,
+  mirror: IMirror<Node>,
+): boolean {
   if (isShadowRoot(target)) {
     return false;
   }

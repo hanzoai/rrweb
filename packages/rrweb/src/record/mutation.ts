@@ -6,13 +6,13 @@ import {
   isShadowRoot,
   needMaskingText,
   maskInputValue,
-  Mirror,
   isNativeShadowDom,
   getInputType,
   toLowerCase,
-} from '@posthog/rrweb-snapshot';
+} from '@posthog/rrweb-snapshot/record';
 import type { observerParam, MutationBufferParam } from '../types';
 import type {
+  IMirror,
   mutationRecord,
   textCursor,
   attributeCursor,
@@ -813,7 +813,11 @@ function processRemoves(n: Node, cache: Set<Node>) {
   return;
 }
 
-function isParentRemoved(removes: Set<Node>, n: Node, mirror: Mirror): boolean {
+function isParentRemoved(
+  removes: Set<Node>,
+  n: Node,
+  mirror: IMirror<Node>,
+): boolean {
   if (removes.size === 0) return false;
   return _isParentRemoved(removes, n, mirror);
 }
@@ -821,7 +825,7 @@ function isParentRemoved(removes: Set<Node>, n: Node, mirror: Mirror): boolean {
 function _isParentRemoved(
   removes: Set<Node>,
   n: Node,
-  _mirror: Mirror,
+  _mirror: IMirror<Node>,
 ): boolean {
   const node: ParentNode | null = dom.parentNode(n);
   if (!node) return false;

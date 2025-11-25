@@ -1,10 +1,9 @@
 import {
   type MaskInputOptions,
   maskInputValue,
-  Mirror,
   getInputType,
   toLowerCase,
-} from '@posthog/rrweb-snapshot';
+} from '@posthog/rrweb-snapshot/record';
 import type { FontFaceSet } from 'css-font-loading-module';
 import {
   throttle,
@@ -27,6 +26,7 @@ import {
   MediaInteractions,
 } from '@posthog/rrweb-types';
 import type {
+  IMirror,
   mutationCallBack,
   mousemoveCallBack,
   mousePosition,
@@ -571,7 +571,7 @@ function getNestedCSSRulePositions(rule: CSSRule): number[] {
  */
 function getIdAndStyleId(
   sheet: CSSStyleSheet | undefined | null,
-  mirror: Mirror,
+  mirror: IMirror<Node>,
   styleMirror: StyleSheetMirror,
 ): {
   styleId?: number;

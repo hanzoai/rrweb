@@ -1,11 +1,11 @@
-import type { Mirror } from '@posthog/rrweb-snapshot';
-import { genId } from '@posthog/rrweb-snapshot';
+import { genId } from '@posthog/rrweb-snapshot/record';
 import type { CrossOriginIframeMessageEvent } from '../types';
 import CrossOriginIframeMirror from './cross-origin-iframe-mirror';
 import { EventType, NodeType, IncrementalSource } from '@posthog/rrweb-types';
 import type {
   eventWithTime,
   eventWithoutTime,
+  IMirror,
   serializedNodeWithId,
   mutationCallBack,
 } from '@posthog/rrweb-types';
@@ -19,7 +19,7 @@ export class IframeManager {
   public crossOriginIframeStyleMirror: CrossOriginIframeMirror;
   public crossOriginIframeRootIdMap: WeakMap<HTMLIFrameElement, number> =
     new WeakMap();
-  private mirror: Mirror;
+  private mirror: IMirror<Node>;
   private mutationCb: mutationCallBack;
   private wrappedEmit: (e: eventWithoutTime, isCheckout?: boolean) => void;
   private loadListener?: (iframeEl: HTMLIFrameElement) => unknown;
@@ -31,7 +31,7 @@ export class IframeManager {
     new Map();
 
   constructor(options: {
-    mirror: Mirror;
+    mirror: IMirror<Node>;
     mutationCb: mutationCallBack;
     stylesheetManager: StylesheetManager;
     recordCrossOriginIframes: boolean;

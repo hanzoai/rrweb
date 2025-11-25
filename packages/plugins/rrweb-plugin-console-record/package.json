@@ -23,6 +23,7 @@
         "dist",
         "package.json"
     ],
+    "sideEffects": false,
     "scripts": {
         "dev": "vite build --watch",
         "test": "vitest run",

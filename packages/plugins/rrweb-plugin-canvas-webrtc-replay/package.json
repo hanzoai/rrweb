@@ -27,7 +27,7 @@
     "dev": "vite build --watch",
     "build": "yarn turbo run prepublish",
     "check-types": "tsc -noEmit",
-    "prepublish": "tsc -noEmit && vite build"
+    "prepublish": "vite build"
   },
   "repository": {
     "type": "git",

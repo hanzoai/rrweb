@@ -1,5 +1,6 @@
 import type { MutationBufferParam } from '../types';
 import type {
+  IMirror,
   mutationCallBack,
   scrollCallback,
   SamplingStrategy,
@@ -10,8 +11,7 @@ import {
   initAdoptedStyleSheetObserver,
 } from './observer';
 import { inDom } from '../utils';
-import type { Mirror } from '@posthog/rrweb-snapshot';
-import { isNativeShadowDom } from '@posthog/rrweb-snapshot';
+import { isNativeShadowDom } from '@posthog/rrweb-snapshot/record';
 import dom, { patch } from '@posthog/rrweb-utils';
 
 type BypassOptions = Omit<
@@ -26,14 +26,14 @@ export class ShadowDomManager {
   private mutationCb: mutationCallBack;
   private scrollCb: scrollCallback;
   private bypassOptions: BypassOptions;
-  private mirror: Mirror;
+  private mirror: IMirror<Node>;
   private restoreHandlers: (() => void)[] = [];
 
   constructor(options: {
     mutationCb: mutationCallBack;
     scrollCb: scrollCallback;
     bypassOptions: BypassOptions;
-    mirror: Mirror;
+    mirror: IMirror<Node>;
   }) {
     this.mutationCb = options.mutationCb;
     this.scrollCb = options.scrollCb;

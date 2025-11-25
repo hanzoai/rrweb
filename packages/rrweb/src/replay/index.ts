@@ -1,12 +1,12 @@
 import {
   rebuild,
   buildNodeWithSN,
-  type BuildCache,
   createCache,
-  Mirror,
   createMirror,
   toLowerCase,
-} from '@posthog/rrweb-snapshot';
+} from '@posthog/rrweb-snapshot/replay';
+import type { BuildCache } from '@posthog/rrweb-snapshot/record';
+import type { IMirror } from '@posthog/rrweb-types';
 import {
   RRDocument,
   createOrGetNode,
@@ -145,7 +145,7 @@ export class Replayer {
   private imageMap: Map<eventWithTime | string, HTMLImageElement> = new Map();
   private canvasEventMap: Map<eventWithTime, canvasMutationParam> = new Map();
 
-  private mirror: Mirror = createMirror();
+  private mirror: IMirror<Node> = createMirror();
 
   // Used to track StyleSheetObjects adopted on multiple document hosts.
   private styleMirror: StyleSheetMirror = new StyleSheetMirror();
@@ -531,7 +531,7 @@ export class Replayer {
     return baselineTime - events[0].timestamp;
   }
 
-  public getMirror(): Mirror {
+  public getMirror(): IMirror<Node> {
     return this.mirror;
   }
 

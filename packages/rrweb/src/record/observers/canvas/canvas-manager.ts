@@ -1,10 +1,11 @@
-import type { ICanvas, Mirror } from '@posthog/rrweb-snapshot';
+import type { ICanvas } from '@posthog/rrweb-snapshot/record';
 import type {
   blockClass,
   canvasManagerMutationCallback,
   canvasMutationCallback,
   canvasMutationCommand,
   canvasMutationWithType,
+  IMirror,
   IWindow,
   listenerHandler,
   CanvasArg,
@@ -28,7 +29,7 @@ type pendingCanvasMutationsMap = Map<
 export class CanvasManager {
   private pendingCanvasMutations: pendingCanvasMutationsMap = new Map();
   private rafStamps: RafStamps = { latestId: 0, invokeId: null };
-  private mirror: Mirror;
+  private mirror: IMirror<Node>;
 
   private mutationCb: canvasMutationCallback;
   private resetObservers?: listenerHandler;
@@ -72,7 +73,7 @@ export class CanvasManager {
     win: IWindow;
     blockClass: blockClass;
     blockSelector: string | null;
-    mirror: Mirror;
+    mirror: IMirror<Node>;
     sampling?: 'all' | number;
     dataURLOptions: DataURLOptions;
   }) {

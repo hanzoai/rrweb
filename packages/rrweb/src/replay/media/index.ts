@@ -1,8 +1,7 @@
-import type { Emitter } from '@posthog/rrweb-types';
+import type { Emitter, IMirror } from '@posthog/rrweb-types';
 import { MediaInteractions, ReplayerEvents } from '@posthog/rrweb-types';
 import type { RRMediaElement } from '@posthog/rrdom';
 import type { createPlayerService, createSpeedService } from '../machine';
-import type { Mirror } from '@posthog/rrweb-snapshot';
 import type {
   mediaInteractionData,
   mediaAttributes,
@@ -210,7 +209,11 @@ export class MediaManager {
     }
   }
 
-  public addMediaElements(node: Node, timeOffset: number, mirror: Mirror) {
+  public addMediaElements(
+    node: Node,
+    timeOffset: number,
+    mirror: IMirror<Node>,
+  ) {
     if (!this.isSupportedMediaElement(node)) return;
     const target = node;
     const serializedNode = mirror.getMeta(target);

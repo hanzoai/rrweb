@@ -10,7 +10,7 @@
         "test": "vitest run",
         "test:watch": "vitest watch",
         "check-types": "tsc -noEmit",
-        "prepublish": "tsc -noEmit && vite build",
+        "prepublish": "vite build",
         "lint": "yarn eslint src/**/*.ts"
     },
     "repository": {
@@ -39,6 +39,7 @@
         "dist",
         "package.json"
     ],
+    "sideEffects": false,
     "devDependencies": {
         "puppeteer": "^20.9.0",
         "vite": "^6.2.0",
