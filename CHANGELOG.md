@@ -1,3 +1,7 @@
+## 0.0.40 - 2026-02-02
+
+- fix: avoid Symbol.toStringTag access in stringify isObject check (#127)
+
 ## 0.0.39 - 2026-02-02
 
 - fix: replayer should stop services on destroy (#125)
