@@ -1,3 +1,7 @@
+## 0.0.39 - 2026-02-02
+
+- fix: replayer should stop services on destroy (#125)
+
 ## 0.0.38 - 2026-01-29
 
 - fix: must clean elements from maps on remove from DOM (#124)
