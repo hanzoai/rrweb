@@ -1,3 +1,7 @@
+## 0.0.42 - 2026-02-13
+
+- feat: re-export maxDepth helpers through dependency chain (#132)
+
 ## 0.0.41 - 2026-02-13
 
 - fix(rrweb-snapshot): add max depth limit to DOM serialization (#130)
