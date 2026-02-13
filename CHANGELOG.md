@@ -1,3 +1,7 @@
+## 0.0.41 - 2026-02-13
+
+- fix(rrweb-snapshot): add max depth limit to DOM serialization (#130)
+
 ## 0.0.40 - 2026-02-02
 
 - fix: avoid Symbol.toStringTag access in stringify isObject check (#127)
