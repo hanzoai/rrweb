@@ -606,6 +606,11 @@ export class Replayer {
     // Stop the state machine services
     this.service.stop();
     this.speedService.stop();
+    
+    // Clear timer actions
+    if (this.timer) {
+      this.timer.clear();
+    }
 
     // Clear all pending timeouts
     this.timeouts.forEach((timeout) => clearTimeout(timeout));
