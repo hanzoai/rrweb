@@ -238,9 +238,13 @@ export class CanvasManager {
             }
           }
           // createImageBitmap throws if resizing to 0
-          // Fallback to intrinsic size if canvas has not yet rendered
-          const width = canvas.clientWidth || canvas.width;
-          const height = canvas.clientHeight || canvas.height;
+          // Prefer clientWidth/clientHeight (rendered CSS size) but fallback to canvas.width/height
+          // (internal resolution) if not yet rendered (0 or very small <= 10px).
+          // This handles both CSS-sized canvases and auto-sized canvases that haven't laid out yet.
+          const width =
+            canvas.clientWidth > 10 ? canvas.clientWidth : canvas.width;
+          const height =
+            canvas.clientHeight > 10 ? canvas.clientHeight : canvas.height;
           const bitmap = await createImageBitmap(canvas, {
             resizeWidth: width,
             resizeHeight: height,
