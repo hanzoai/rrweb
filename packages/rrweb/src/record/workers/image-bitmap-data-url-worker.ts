@@ -8,6 +8,14 @@ import type {
 const lastBlobMap: Map<number, string> = new Map();
 const transparentBlobMap: Map<string, string> = new Map();
 
+// Safari memory management: limit cached blob count to prevent unbounded growth
+const MAX_CACHED_BLOBS = 100;
+const MAX_TRANSPARENT_CACHE = 20;
+
+// Periodic cleanup to help Safari's garbage collector
+let cleanupCounter = 0;
+const CLEANUP_INTERVAL = 50; // Run cleanup every 50 worker messages
+
 export interface ImageBitmapDataURLRequestWorker {
   postMessage: (
     message: ImageBitmapDataURLWorkerParams,
@@ -31,11 +39,22 @@ async function getTransparentBlobFor(
   const id = `${width}-${height}`;
   if ('OffscreenCanvas' in globalThis) {
     if (transparentBlobMap.has(id)) return transparentBlobMap.get(id)!;
+
+    // Limit cache size to prevent memory growth in Safari
+    if (transparentBlobMap.size >= MAX_TRANSPARENT_CACHE) {
+      const firstKey = transparentBlobMap.keys().next().value;
+      transparentBlobMap.delete(firstKey);
+    }
+
     const offscreen = new OffscreenCanvas(width, height);
     offscreen.getContext('2d'); // creates rendering context for `converToBlob`
-    const blob = await offscreen.convertToBlob(dataURLOptions); // takes a while
+    let blob: Blob | null = await offscreen.convertToBlob(dataURLOptions); // takes a while
     const arrayBuffer = await blob.arrayBuffer();
     const base64 = encode(arrayBuffer); // cpu intensive
+
+    // Explicitly null out blob reference to help Safari's GC
+    blob = null;
+
     transparentBlobMap.set(id, base64);
     return base64;
   } else {
@@ -51,6 +70,27 @@ worker.onmessage = async function (e) {
   if ('OffscreenCanvas' in globalThis) {
     const { id, bitmap, width, height, dataURLOptions } = e.data;
 
+    // Periodic cleanup to help Safari manage memory
+    cleanupCounter++;
+    if (
+      cleanupCounter >= CLEANUP_INTERVAL ||
+      lastBlobMap.size > MAX_CACHED_BLOBS
+    ) {
+      cleanupCounter = 0;
+
+      // Limit lastBlobMap size to prevent unbounded growth
+      if (lastBlobMap.size > MAX_CACHED_BLOBS) {
+        const entriesToRemove = lastBlobMap.size - MAX_CACHED_BLOBS;
+        const iterator = lastBlobMap.keys();
+        for (let i = 0; i < entriesToRemove; i++) {
+          const key = iterator.next().value;
+          if (key !== undefined) {
+            lastBlobMap.delete(key);
+          }
+        }
+      }
+    }
+
     const transparentBase64 = getTransparentBlobFor(
       width,
       height,
@@ -62,10 +102,14 @@ worker.onmessage = async function (e) {
 
     ctx.drawImage(bitmap, 0, 0);
     bitmap.close();
-    const blob = await offscreen.convertToBlob(dataURLOptions); // takes a while
+    let blob: Blob | null = await offscreen.convertToBlob(dataURLOptions); // takes a while
     const type = blob.type;
     const arrayBuffer = await blob.arrayBuffer();
     const base64 = encode(arrayBuffer); // cpu intensive
+
+    // Explicitly null out blob reference to help Safari's GC
+    // This is critical for Safari to release the blob from memory
+    blob = null;
 
     // on first try we should check if canvas is transparent,
     // no need to save it's contents in that case
