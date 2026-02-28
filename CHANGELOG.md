@@ -1,3 +1,7 @@
+## 0.0.43 - 2026-02-28
+
+- fix(rrweb): close ImageBitmap in worker when OffscreenCanvas is unavailable (#136)
+
 ## 0.0.42 - 2026-02-13
 
 - feat: re-export maxDepth helpers through dependency chain (#132)
