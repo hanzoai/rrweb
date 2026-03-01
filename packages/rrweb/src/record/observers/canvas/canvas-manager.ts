@@ -172,6 +172,8 @@ export class CanvasManager {
             ],
           },
         ],
+        displayWidth: width,
+        displayHeight: height,
       });
     };
 
