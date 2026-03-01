@@ -1,3 +1,8 @@
+## 0.0.44 - 2026-03-01
+
+- fix(rrweb): add displayWidth/displayHeight to canvas mutation data (#137)
+- fix(rrweb): stop canvas FPS observer when OffscreenCanvas is unavailable (#138)
+
 ## 0.0.43 - 2026-02-28
 
 - fix(rrweb): close ImageBitmap in worker when OffscreenCanvas is unavailable (#136)
