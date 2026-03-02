@@ -1,3 +1,7 @@
+## 0.0.45 - 2026-03-02
+
+- fix: reuse OffscreenCanvas in worker to prevent memory leak (#139)
+
 ## 0.0.44 - 2026-03-01
 
 - fix(rrweb): add displayWidth/displayHeight to canvas mutation data (#137)
