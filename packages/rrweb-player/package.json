@@ -1,6 +1,6 @@
 {
     "name": "@posthog/rrweb-player",
-    "version": "0.0.45",
+    "version": "0.0.46",
     "devDependencies": {
         "@posthog/rrweb-types": "workspace:*",
         "fast-glob": "^3.3.2",

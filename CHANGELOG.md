@@ -1,3 +1,7 @@
+## 0.0.46 - 2026-03-04
+
+- fix(rrweb): use FNV-1a hash for canvas frame dedup instead of full base64 (#140)
+
 ## 0.0.45 - 2026-03-02
 
 - fix: reuse OffscreenCanvas in worker to prevent memory leak (#139)
