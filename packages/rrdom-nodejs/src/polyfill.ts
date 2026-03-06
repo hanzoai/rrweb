@@ -1,4 +1,4 @@
-import { BaseRRNode } from '@posthog/rrdom';
+import { BaseRRNode } from '@hanzo/rrdom';
 import { RRDocument } from './document-nodejs';
 
 /**

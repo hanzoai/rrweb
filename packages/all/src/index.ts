@@ -1,4 +1,4 @@
-export * from '@posthog/rrweb';
-export * from '@posthog/rrweb-packer';
-// export * from '@posthog/rrweb-plugin-console-record';
-// export * from '@posthog/rrweb-plugin-console-replay';
+export * from '@hanzo/rrweb';
+export * from '@hanzo/rrweb-packer';
+// export * from '@hanzo/rrweb-plugin-console-record';
+// export * from '@hanzo/rrweb-plugin-console-replay';

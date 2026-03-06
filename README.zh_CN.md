@@ -177,8 +177,8 @@ rrweb 主要由 3 部分组成：
       </a>
     </td>
     <td align="center">
-      <a href="https://posthog.com?utm_source=rrweb&utm_medium=sponsorship&utm_campaign=open-source-sponsorship" target="_blank">
-        <img width="195px" src="https://www.rrweb.io/logos/posthog.png">
+      <a href="https://hanzo.com?utm_source=rrweb&utm_medium=sponsorship&utm_campaign=open-source-sponsorship" target="_blank">
+        <img width="195px" src="https://www.rrweb.io/logos/hanzo.png">
       </a>
     </td>
     <td align="center">

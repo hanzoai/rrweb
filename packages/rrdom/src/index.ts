@@ -1,6 +1,6 @@
-import { createMirror as createNodeMirror } from '@posthog/rrweb-snapshot';
-import type { Mirror as NodeMirror } from '@posthog/rrweb-snapshot';
-import { NodeType as RRNodeType } from '@posthog/rrweb-types';
+import { createMirror as createNodeMirror } from '@hanzo/rrweb-snapshot';
+import type { Mirror as NodeMirror } from '@hanzo/rrweb-snapshot';
+import { NodeType as RRNodeType } from '@hanzo/rrweb-types';
 import type {
   IMirror,
   serializedNodeWithId,
@@ -10,7 +10,7 @@ import type {
   scrollData,
   styleSheetRuleData,
   styleDeclarationData,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import {
   BaseRRNode as RRNode,
   BaseRRCDATASection,

@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { JSDOM } from 'jsdom';
 import { Replayer } from '../../src/replay';
-import { EventType } from '@posthog/rrweb-types';
-import type { eventWithTime } from '@posthog/rrweb-types';
+import { EventType } from '@hanzo/rrweb-types';
+import type { eventWithTime } from '@hanzo/rrweb-types';
 
 describe('replay memory leak prevention', () => {
   let events: eventWithTime[];

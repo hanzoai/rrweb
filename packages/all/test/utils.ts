@@ -8,7 +8,7 @@ import {
   mouseInteractionData,
   event,
   pluginEvent,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import * as puppeteer from 'puppeteer';
 import * as path from 'path';
 import * as http from 'http';

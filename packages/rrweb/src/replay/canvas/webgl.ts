@@ -2,7 +2,7 @@ import type { Replayer } from '../';
 import {
   CanvasContext,
   type canvasMutationCommand,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import { deserializeArg, variableListFor } from './deserialize-args';
 
 function getContext(

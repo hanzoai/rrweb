@@ -1,4 +1,4 @@
-import { NodeType as RRNodeType } from '@posthog/rrweb-types';
+import { NodeType as RRNodeType } from '@hanzo/rrweb-types';
 import { parseCSSText, camelize, toCSSText } from './style';
 export interface IRRNode {
   parentElement: IRRNode | null;

@@ -1,6 +1,6 @@
-import { record } from '@posthog/rrweb';
-import type { recordOptions } from '@posthog/rrweb';
-import type { eventWithTime } from '@posthog/rrweb-types';
+import { record } from '@hanzo/rrweb';
+import type { recordOptions } from '@hanzo/rrweb';
+import type { eventWithTime } from '@hanzo/rrweb-types';
 import { MessageName, type RecordStartedMessage } from '~/types';
 import { isInCrossOriginIFrame } from '~/utils';
 

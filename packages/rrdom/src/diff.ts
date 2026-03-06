@@ -1,5 +1,5 @@
-import { type Mirror as NodeMirror } from '@posthog/rrweb-snapshot';
-import { NodeType as RRNodeType } from '@posthog/rrweb-types';
+import { type Mirror as NodeMirror } from '@hanzo/rrweb-snapshot';
+import { NodeType as RRNodeType } from '@hanzo/rrweb-types';
 import type {
   canvasMutationData,
   canvasEventWithTime,
@@ -8,7 +8,7 @@ import type {
   scrollData,
   styleDeclarationData,
   styleSheetRuleData,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import type {
   IRRCDATASection,
   IRRComment,

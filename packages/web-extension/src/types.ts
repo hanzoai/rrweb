@@ -1,4 +1,4 @@
-import type { eventWithTime } from '@posthog/rrweb-types';
+import type { eventWithTime } from '@hanzo/rrweb-types';
 
 export enum SyncDataKey {
   settings = 'settings',

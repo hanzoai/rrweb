@@ -3,7 +3,7 @@ import {
   type MaskInputOptions,
   type SlimDOMOptions,
   createMirror,
-} from '@posthog/rrweb-snapshot';
+} from '@hanzo/rrweb-snapshot';
 import { initObservers, mutationBuffers } from './observer';
 import {
   on,
@@ -27,7 +27,7 @@ import {
   type scrollCallback,
   type canvasMutationParam,
   type adoptedStyleSheetParam,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import type { CrossOriginIframeMessageEventContent } from '../types';
 import { IframeManager } from './iframe-manager';
 import { ShadowDomManager } from './shadow-dom-manager';
@@ -39,7 +39,7 @@ import {
   registerErrorHandler,
   unregisterErrorHandler,
 } from './error-handler';
-import dom from '@posthog/rrweb-utils';
+import dom from '@hanzo/rrweb-utils';
 
 let wrappedEmit!: (e: eventWithoutTime, isCheckout?: boolean) => void;
 

@@ -3,8 +3,8 @@ import {
   type playerConfig,
   type PlayerMachineState,
   type SpeedMachineState,
-} from '@posthog/rrweb';
-import '@posthog/rrweb/dist/style.css';
+} from '@hanzo/rrweb';
+import '@hanzo/rrweb/dist/style.css';
 
 export {
   Replayer,

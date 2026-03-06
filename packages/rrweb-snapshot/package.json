@@ -1,5 +1,5 @@
 {
-    "name": "@posthog/rrweb-snapshot",
+    "name": "@hanzo/rrweb-snapshot",
     "version": "0.0.46",
     "description": "rrweb's component to take a snapshot of DOM, aka DOM serializer",
     "scripts": {
@@ -20,7 +20,7 @@
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PostHog/posthog-rrweb.git"
+        "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
     },
     "main": "./dist/rrweb-snapshot.cjs",
     "module": "./dist/rrweb-snapshot.js",
@@ -65,8 +65,8 @@
     "author": "yanzhen@smartx.com",
     "license": "MIT",
     "devDependencies": {
-        "@posthog/rrweb-types": "workspace:*",
-        "@posthog/rrweb-utils": "workspace:*",
+        "@hanzo/rrweb-types": "workspace:*",
+        "@hanzo/rrweb-utils": "workspace:*",
         "@types/jsdom": "^20.0.0",
         "jsdom": "^22.1.0",
         "@types/node": "^18.15.11",

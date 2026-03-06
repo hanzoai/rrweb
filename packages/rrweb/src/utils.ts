@@ -9,15 +9,15 @@ import type {
   DeprecatedMirror,
   textMutation,
   IMirror,
-} from '@posthog/rrweb-types';
-import type { Mirror, SlimDOMOptions } from '@posthog/rrweb-snapshot';
+} from '@hanzo/rrweb-types';
+import type { Mirror, SlimDOMOptions } from '@hanzo/rrweb-snapshot';
 import {
   isShadowRoot,
   IGNORED_NODE,
   classMatchesRegex,
-} from '@posthog/rrweb-snapshot';
-import { RRNode, RRIFrameElement, BaseRRNode } from '@posthog/rrdom';
-import dom from '@posthog/rrweb-utils';
+} from '@hanzo/rrweb-snapshot';
+import { RRNode, RRIFrameElement, BaseRRNode } from '@hanzo/rrdom';
+import dom from '@hanzo/rrweb-utils';
 
 export function on(
   type: string,

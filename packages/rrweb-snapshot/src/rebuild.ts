@@ -5,7 +5,7 @@ import {
   NodeType,
   type elementNode,
   type legacyAttributes,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import { type tagMap, type BuildCache, type textNode } from './types';
 import {
   isElement,

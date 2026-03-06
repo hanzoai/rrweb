@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { createMirror } from '@posthog/rrweb-snapshot';
+import { createMirror } from '@hanzo/rrweb-snapshot';
 import { CanvasManager } from '../../src/record/observers/canvas/canvas-manager';
 
 vi.mock('../../src/record/observers/canvas/canvas', () => ({

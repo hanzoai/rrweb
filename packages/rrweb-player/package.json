@@ -1,8 +1,8 @@
 {
-    "name": "@posthog/rrweb-player",
+    "name": "@hanzo/rrweb-player",
     "version": "0.0.46",
     "devDependencies": {
-        "@posthog/rrweb-types": "workspace:*",
+        "@hanzo/rrweb-types": "workspace:*",
         "fast-glob": "^3.3.2",
         "@sveltejs/adapter-auto": "^3.0.0",
         "@sveltejs/kit": "^2.0.0",
@@ -21,9 +21,9 @@
     },
     "dependencies": {
         "@tsconfig/svelte": "^1.0.0",
-        "@posthog/rrweb-replay": "workspace:*",
-        "@posthog/rrweb-packer": "workspace:*",
-        "@posthog/rrweb-snapshot": "workspace:*"
+        "@hanzo/rrweb-replay": "workspace:*",
+        "@hanzo/rrweb-packer": "workspace:*",
+        "@hanzo/rrweb-snapshot": "workspace:*"
     },
     "scripts": {
         "dev": "vite build --watch",
@@ -59,7 +59,7 @@
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PostHog/posthog-rrweb.git"
+        "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
     },
     "author": "yanzhen@smartx.com",
     "license": "MIT"

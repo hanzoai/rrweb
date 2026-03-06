@@ -7,8 +7,8 @@ import type {
   listenerHandler,
   eventWithTime,
   mutationData,
-} from '@posthog/rrweb-types';
-import { EventType, IncrementalSource } from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
+import { EventType, IncrementalSource } from '@hanzo/rrweb-types';
 import {
   assertSnapshot,
   getServerURL,

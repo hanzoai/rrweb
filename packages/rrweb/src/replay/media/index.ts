@@ -1,12 +1,12 @@
-import type { Emitter } from '@posthog/rrweb-types';
-import { MediaInteractions, ReplayerEvents } from '@posthog/rrweb-types';
-import type { RRMediaElement } from '@posthog/rrdom';
+import type { Emitter } from '@hanzo/rrweb-types';
+import { MediaInteractions, ReplayerEvents } from '@hanzo/rrweb-types';
+import type { RRMediaElement } from '@hanzo/rrdom';
 import type { createPlayerService, createSpeedService } from '../machine';
-import type { Mirror } from '@posthog/rrweb-snapshot';
+import type { Mirror } from '@hanzo/rrweb-snapshot';
 import type {
   mediaInteractionData,
   mediaAttributes,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 
 const SUPPORTED_MEDIA_ELEMENT_NAMES = ['AUDIO', 'VIDEO'];
 

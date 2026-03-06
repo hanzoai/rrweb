@@ -14,8 +14,8 @@ import {
   ISuite,
 } from './utils';
 import type { recordOptions } from '../src/types';
-import { eventWithTime, NodeType, EventType } from '@posthog/rrweb-types';
-import { visitSnapshot } from '@posthog/rrweb-snapshot';
+import { eventWithTime, NodeType, EventType } from '@hanzo/rrweb-types';
+import { visitSnapshot } from '@hanzo/rrweb-snapshot';
 
 describe('record integration tests', function (this: ISuite) {
   vi.setConfig({ testTimeout: 10_000 });

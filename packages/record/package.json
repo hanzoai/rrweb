@@ -1,5 +1,5 @@
 {
-    "name": "@posthog/rrweb-record",
+    "name": "@hanzo/rrweb-record",
     "version": "0.0.46",
     "publishConfig": {
         "access": "public"
@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PostHog/posthog-rrweb.git"
+        "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
     },
     "license": "MIT",
     "type": "module",
@@ -47,9 +47,9 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@posthog/rrweb-types": "workspace:*",
-        "@posthog/rrweb": "workspace:*",
-        "@posthog/rrweb-utils": "workspace:*"
+        "@hanzo/rrweb-types": "workspace:*",
+        "@hanzo/rrweb": "workspace:*",
+        "@hanzo/rrweb-utils": "workspace:*"
     },
     "browserslist": [
         "supports es6-class"

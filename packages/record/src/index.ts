@@ -1,4 +1,4 @@
-import { record } from '@posthog/rrweb';
-export { wasMaxDepthReached, resetMaxDepthState } from '@posthog/rrweb';
+import { record } from '@hanzo/rrweb';
+export { wasMaxDepthReached, resetMaxDepthState } from '@hanzo/rrweb';
 
 export { record };

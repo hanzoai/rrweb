@@ -101,7 +101,7 @@ export default defineConfig({
           process.env.TARGET_BROWSER === 'chrome' ? 'chrome' : 'firefox';
         const commonManifest = originalManifest.common;
         const rrwebVersion = packageJson.dependencies![
-          '@posthog/rrweb'
+          '@hanzo/rrweb'
         ]!.replace('^', '');
         const manifest = {
           version: getExtensionVersion(rrwebVersion),

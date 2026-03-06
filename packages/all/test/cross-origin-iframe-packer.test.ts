@@ -11,14 +11,14 @@ import type {
   eventWithTime,
   listenerHandler,
   mutationData,
-} from '@posthog/rrweb-types';
-import { unpack } from '@posthog/rrweb-packer';
+} from '@hanzo/rrweb-types';
+import { unpack } from '@hanzo/rrweb-packer';
 import * as fs from 'fs';
 import * as path from 'path';
 import type * as puppeteer from 'puppeteer';
-import type { recordOptions } from '@posthog/rrweb';
-import type {} from '@posthog/rrweb-types';
-import { EventType } from '@posthog/rrweb-types';
+import type { recordOptions } from '@hanzo/rrweb';
+import type {} from '@hanzo/rrweb-types';
+import { EventType } from '@hanzo/rrweb-types';
 import {
   assertSnapshot,
   getServerURL,

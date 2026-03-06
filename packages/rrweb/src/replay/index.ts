@@ -6,7 +6,7 @@ import {
   Mirror,
   createMirror,
   toLowerCase,
-} from '@posthog/rrweb-snapshot';
+} from '@hanzo/rrweb-snapshot';
 import {
   RRDocument,
   createOrGetNode,
@@ -14,7 +14,7 @@ import {
   buildFromDom,
   diff,
   getDefaultSN,
-} from '@posthog/rrdom';
+} from '@hanzo/rrdom';
 import type {
   RRNode,
   RRElement,
@@ -24,7 +24,7 @@ import type {
   RRCanvasElement,
   ReplayerHandler,
   Mirror as RRDOMMirror,
-} from '@posthog/rrdom';
+} from '@hanzo/rrdom';
 import * as mittProxy from 'mitt';
 import { polyfill as smoothscrollPolyfill } from './smoothscroll';
 import { Timer } from './timer';
@@ -41,7 +41,7 @@ import {
   IncrementalSource,
   MouseInteractions,
   ReplayerEvents,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import type {
   attributes,
   fullSnapshotEvent,
@@ -69,7 +69,7 @@ import type {
   styleDeclarationData,
   adoptedStyleSheetData,
   serializedElementNodeWithId,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import {
   polyfill,
   queueToResolveTrees,

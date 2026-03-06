@@ -2,10 +2,10 @@ import {
   type LogLevel,
   type LogData,
   PLUGIN_NAME,
-} from '@posthog/rrweb-plugin-console-record';
-import type { eventWithTime } from '@posthog/rrweb-types';
-import { EventType, IncrementalSource } from '@posthog/rrweb-types';
-import type { ReplayPlugin, Replayer } from '@posthog/rrweb';
+} from '@hanzo/rrweb-plugin-console-record';
+import type { eventWithTime } from '@hanzo/rrweb-types';
+import { EventType, IncrementalSource } from '@hanzo/rrweb-types';
+import type { ReplayPlugin, Replayer } from '@hanzo/rrweb';
 
 /**
  * define an interface to replay log records

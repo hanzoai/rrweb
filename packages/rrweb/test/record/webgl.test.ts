@@ -9,14 +9,14 @@ import {
   EventType,
   IncrementalSource,
   CanvasContext,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import {
   assertSnapshot,
   launchPuppeteer,
   stripBase64,
   waitForRAF,
 } from '../utils';
-import type { ICanvas } from '@posthog/rrweb-snapshot';
+import type { ICanvas } from '@hanzo/rrweb-snapshot';
 
 interface ISuite {
   code: string;

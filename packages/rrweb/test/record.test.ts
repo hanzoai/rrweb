@@ -11,7 +11,7 @@ import {
   IncrementalSource,
   styleSheetRuleData,
   selectionData,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import {
   assertSnapshot,
   getServerURL,

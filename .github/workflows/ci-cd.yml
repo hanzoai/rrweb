@@ -29,7 +29,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Chrome for Puppeteer
-        run: pnpm --filter @posthog/rrweb exec puppeteer browsers install chrome
+        run: pnpm --filter @hanzo/rrweb exec puppeteer browsers install chrome
 
       - name: Build Project
         run: NODE_OPTIONS='--max-old-space-size=4096' pnpm build:all

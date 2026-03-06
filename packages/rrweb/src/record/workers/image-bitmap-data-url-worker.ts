@@ -3,7 +3,7 @@ import type {
   DataURLOptions,
   ImageBitmapDataURLWorkerParams,
   ImageBitmapDataURLWorkerResponse,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 
 const lastFingerprintMap: Map<number, string> = new Map();
 const transparentBlobMap: Map<string, string> = new Map();

@@ -4,7 +4,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
-import { NodeType as RRNodeType } from '@posthog/rrweb-types';
+import { NodeType as RRNodeType } from '@hanzo/rrweb-types';
 import {
   RRCanvasElement,
   RRCDATASection,
@@ -17,7 +17,7 @@ import {
   RRStyleElement,
   RRText,
 } from '../src/document-nodejs';
-import { buildFromDom } from '@posthog/rrdom';
+import { buildFromDom } from '@hanzo/rrdom';
 
 describe('RRDocument for nodejs environment', () => {
   describe('RRDocument API', () => {

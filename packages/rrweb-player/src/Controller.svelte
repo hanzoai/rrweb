@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { EventType } from '@posthog/rrweb-types';
-  import type { playerMetaData } from '@posthog/rrweb-types';
+  import { EventType } from '@hanzo/rrweb-types';
+  import type { playerMetaData } from '@hanzo/rrweb-types';
   import type {
     Replayer,
     PlayerMachineState,
     SpeedMachineState,
-  } from '@posthog/rrweb-replay';
+  } from '@hanzo/rrweb-replay';
   import {
     onMount,
     onDestroy,

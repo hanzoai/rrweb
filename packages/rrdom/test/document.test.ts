@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { NodeType as RRNodeType } from '@posthog/rrweb-types';
+import { NodeType as RRNodeType } from '@hanzo/rrweb-types';
 import {
   BaseRRDocument,
   BaseRRDocumentType,

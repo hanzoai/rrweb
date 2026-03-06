@@ -2,8 +2,8 @@ import type {
   listenerHandler,
   RecordPlugin,
   IWindow,
-} from '@posthog/rrweb-types';
-import { patch } from '@posthog/rrweb-utils';
+} from '@hanzo/rrweb-types';
+import { patch } from '@hanzo/rrweb-utils';
 import { ErrorStackParser, StackFrame } from './error-stack-parser';
 import { stringify } from './stringify';
 

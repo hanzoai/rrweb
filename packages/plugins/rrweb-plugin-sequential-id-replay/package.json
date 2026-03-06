@@ -1,5 +1,5 @@
 {
-  "name": "@posthog/rrweb-plugin-sequential-id-replay",
+  "name": "@hanzo/rrweb-plugin-sequential-id-replay",
   "version": "0.0.0",
   "description": "",
   "type": "module",
@@ -31,19 +31,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PostHog/posthog-rrweb.git"
+    "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
   },
   "author": "yanzhen@smartx.com",
   "license": "MIT",
   "devDependencies": {
-    "@posthog/rrweb-plugin-sequential-id-record": "workspace:*",
-    "@posthog/rrweb": "workspace:*",
-    "@posthog/rrweb-types": "workspace:*",
+    "@hanzo/rrweb-plugin-sequential-id-record": "workspace:*",
+    "@hanzo/rrweb": "workspace:*",
+    "@hanzo/rrweb-types": "workspace:*",
     "typescript": "^5.4.5",
     "vite": "^6.2.0",
     "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
-    "@posthog/rrweb": "workspace:*"
+    "@hanzo/rrweb": "workspace:*"
   }
 }

@@ -71,7 +71,7 @@ export type serializedNode = (
   isShadow?: boolean;
 };
 
-import type { serializedNodeWithId } from '@posthog/rrweb-types';
+import type { serializedNodeWithId } from '@hanzo/rrweb-types';
 
 export type serializedElementNodeWithId = Extract<
   serializedNodeWithId,

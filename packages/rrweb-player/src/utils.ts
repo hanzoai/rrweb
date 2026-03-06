@@ -15,8 +15,8 @@ declare global {
   }
 }
 
-import { EventType, IncrementalSource } from '@posthog/rrweb-types';
-import type { eventWithTime } from '@posthog/rrweb-types';
+import { EventType, IncrementalSource } from '@hanzo/rrweb-types';
+import type { eventWithTime } from '@hanzo/rrweb-types';
 
 export function inlineCss(cssObj: Record<string, string>): string {
   let style = '';
@@ -150,7 +150,7 @@ export function typeOf(
 }
 
 /**
- * Forked from '@posthog/rrweb' replay/index.ts. The original function is not exported.
+ * Forked from '@hanzo/rrweb' replay/index.ts. The original function is not exported.
  * Determine whether the event is a user interaction event
  * @param event - event to be determined
  * @returns true if the event is a user interaction event

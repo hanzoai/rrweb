@@ -1,5 +1,5 @@
 {
-    "name": "@posthog/rrdom",
+    "name": "@hanzo/rrdom",
     "version": "0.0.46",
     "license": "MIT",
     "type": "module",
@@ -25,7 +25,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PostHog/posthog-rrweb.git"
+        "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
     },
     "scripts": {
         "dev": "vite build --watch",
@@ -37,7 +37,7 @@
         "lint": "pnpm eslint src/**/*.ts"
     },
     "devDependencies": {
-        "@posthog/rrweb-types": "*",
+        "@hanzo/rrweb-types": "*",
         "@types/jsdom": "^20.0.0",
         "jsdom": "^22.1.0",
         "@typescript-eslint/eslint-plugin": "^5.23.0",
@@ -49,6 +49,6 @@
         "vite-plugin-dts": "^3.9.1"
     },
     "dependencies": {
-        "@posthog/rrweb-snapshot": "workspace:*"
+        "@hanzo/rrweb-snapshot": "workspace:*"
     }
 }

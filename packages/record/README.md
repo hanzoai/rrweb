@@ -12,7 +12,7 @@ npm install @rrweb/record
 ## Usage
 
 ```js
-import { record } from '@posthog/rrweb-record';
+import { record } from '@hanzo/rrweb-record';
 
 record({
   emit(event) {
@@ -139,8 +139,8 @@ All `record` related code will get moved here in the future.
       </a>
     </td>
     <td align="center">
-      <a href="https://posthog.com?utm_source=rrweb&utm_medium=sponsorship&utm_campaign=open-source-sponsorship" target="_blank">
-        <img width="195px" src="https://www.rrweb.io/logos/posthog.png">
+      <a href="https://hanzo.com?utm_source=rrweb&utm_medium=sponsorship&utm_campaign=open-source-sponsorship" target="_blank">
+        <img width="195px" src="https://www.rrweb.io/logos/hanzo.png">
       </a>
     </td>
     <td align="center">

@@ -5,7 +5,7 @@ import type {
   nodeMetaMap,
 } from './types';
 
-import { NodeType } from '@posthog/rrweb-types';
+import { NodeType } from '@hanzo/rrweb-types';
 import type {
   IMirror,
   serializedNodeWithId,
@@ -14,8 +14,8 @@ import type {
   documentTypeNode,
   textNode,
   elementNode,
-} from '@posthog/rrweb-types';
-import dom from '@posthog/rrweb-utils';
+} from '@hanzo/rrweb-types';
+import dom from '@hanzo/rrweb-utils';
 
 export function isElement(n: Node): n is Element {
   return n.nodeType === n.ELEMENT_NODE;

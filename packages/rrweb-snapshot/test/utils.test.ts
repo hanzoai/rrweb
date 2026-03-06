@@ -10,11 +10,11 @@ import {
   isNodeMetaEqual,
   stringifyStylesheet,
 } from '../src/utils';
-import { NodeType } from '@posthog/rrweb-types';
+import { NodeType } from '@hanzo/rrweb-types';
 import type {
   serializedNode,
   serializedNodeWithId,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 
 describe('utils', () => {
   describe('isNodeMetaEqual()', () => {

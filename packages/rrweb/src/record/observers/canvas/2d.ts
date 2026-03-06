@@ -5,9 +5,9 @@ import {
   type IWindow,
   type listenerHandler,
   type DataURLOptions,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 import { hookSetter, isBlocked } from '../../../utils';
-import { patch } from '@posthog/rrweb-utils';
+import { patch } from '@hanzo/rrweb-utils';
 import { serializeArgs } from './serialize-args';
 
 export default function initCanvas2DMutationObserver(

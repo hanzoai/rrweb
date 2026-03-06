@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
 import { vi } from 'vitest';
-import type { eventWithTime } from '@posthog/rrweb-types';
+import type { eventWithTime } from '@hanzo/rrweb-types';
 import type { recordOptions } from '../../src/types';
 import { launchPuppeteer, ISuite } from '../utils';
 

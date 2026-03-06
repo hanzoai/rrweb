@@ -74,7 +74,7 @@ rrweb provides an fflate-based simple compress function in [@rrweb/packer](../..
 You can use it by passing it as the `packFn` in the recording.
 
 ```js
-import { pack } from '@posthog/rrweb-packer';
+import { pack } from '@hanzo/rrweb-packer';
 
 rrweb.record({
   emit(event) {},
@@ -85,7 +85,7 @@ rrweb.record({
 And you need to pass packer.unpack as the `unpackFn` in replaying.
 
 ```js
-import { unpack } from '@posthog/rrweb-packer';
+import { unpack } from '@hanzo/rrweb-packer';
 
 const replayer = new rrweb.Replayer(events, {
   unpackFn: unpack,

@@ -21,7 +21,7 @@ jobs:
 
       - name: Check package version and detect an update
         id: check-package-version
-        uses: PostHog/check-package-version@v2
+        uses: Hanzo/check-package-version@v2
         with:
           # only supports one path - we'll cross that bridge when we come to it
           path: 'packages/rrweb'
@@ -78,7 +78,7 @@ jobs:
 #                --method POST \
 #                -H "Accept: application/vnd.github+json" \
 #                -H "X-GitHub-Api-Version: 2022-11-28" \
-#                /repos/posthog/posthog-js/releases \
+#                /repos/hanzo/hanzo-js/releases \
 #                -f tag_name="v${{ env.COMMITTED_VERSION }}" \
 #              -f target_commitish='main' \
 #              -f name="${{ env.COMMITTED_VERSION }}" \

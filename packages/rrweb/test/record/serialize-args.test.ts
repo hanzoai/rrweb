@@ -5,7 +5,7 @@ import { polyfillWebGLGlobals } from '../utils';
 polyfillWebGLGlobals();
 
 import { serializeArg } from '../../src/record/observers/canvas/serialize-args';
-import type { DataURLOptions } from '@posthog/rrweb-types';
+import type { DataURLOptions } from '@hanzo/rrweb-types';
 
 const createContext = () => {
   const ctx = new WebGL2RenderingContext();

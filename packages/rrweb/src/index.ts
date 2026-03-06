@@ -15,12 +15,12 @@ export {
   MouseInteractions,
   ReplayerEvents,
   type eventWithTime,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 
 export {
   wasMaxDepthReached,
   resetMaxDepthState,
-} from '@posthog/rrweb-snapshot';
+} from '@hanzo/rrweb-snapshot';
 
 // exports style.css from replay
 import './replay/styles/style.css';

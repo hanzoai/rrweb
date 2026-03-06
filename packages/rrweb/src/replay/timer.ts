@@ -3,7 +3,7 @@ import {
   type eventWithTime,
   EventType,
   IncrementalSource,
-} from '@posthog/rrweb-types';
+} from '@hanzo/rrweb-types';
 
 export class Timer {
   public timeOffset = 0;

@@ -6,9 +6,9 @@ import { vi, type MockInstance } from 'vitest';
 import type {
   styleDeclarationData,
   styleSheetRuleData,
-} from '@posthog/rrweb-types';
-import { createMirror, Mirror as NodeMirror } from '@posthog/rrweb-snapshot';
-import type { ReplayerHandler } from '@posthog/rrdom';
+} from '@hanzo/rrweb-types';
+import { createMirror, Mirror as NodeMirror } from '@hanzo/rrweb-snapshot';
+import type { ReplayerHandler } from '@hanzo/rrdom';
 
 describe('diff algorithm for rrdom', () => {
   let mirror: NodeMirror;

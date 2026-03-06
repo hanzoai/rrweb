@@ -1,5 +1,5 @@
-import type { attributeMutation } from '@posthog/rrweb-types';
-import { RRNode } from '@posthog/rrdom';
+import type { attributeMutation } from '@hanzo/rrweb-types';
+import { RRNode } from '@hanzo/rrdom';
 
 /**
  * Checks if the dialog is a top level dialog and applies the dialog to the top level
