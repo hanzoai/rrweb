@@ -85,13 +85,13 @@ importers:
 
   packages/all:
     dependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../rrweb
-      '@posthog/rrweb-packer':
+      '@hanzo/rrweb-packer':
         specifier: workspace:*
         version: link:../packer
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
@@ -113,7 +113,7 @@ importers:
 
   packages/packer:
     dependencies:
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
       fflate:
@@ -139,10 +139,10 @@ importers:
         specifier: ^9.10.0
         version: 9.10.0
     devDependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../../types
       typescript:
@@ -161,13 +161,13 @@ importers:
         specifier: ^9.10.0
         version: 9.10.0
     devDependencies:
-      '@posthog/rrdom':
+      '@hanzo/rrdom':
         specifier: workspace:*
         version: link:../../rrdom
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-snapshot':
+      '@hanzo/rrweb-snapshot':
         specifier: workspace:*
         version: link:../../rrweb-snapshot
       '@types/dom-mediacapture-transform':
@@ -185,13 +185,13 @@ importers:
 
   packages/plugins/rrweb-plugin-console-record:
     devDependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../../types
-      '@posthog/rrweb-utils':
+      '@hanzo/rrweb-utils':
         specifier: workspace:*
         version: link:../../utils
       puppeteer:
@@ -212,13 +212,13 @@ importers:
 
   packages/plugins/rrweb-plugin-console-replay:
     devDependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-plugin-console-record':
+      '@hanzo/rrweb-plugin-console-record':
         specifier: workspace:*
         version: link:../rrweb-plugin-console-record
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../../types
       typescript:
@@ -233,10 +233,10 @@ importers:
 
   packages/plugins/rrweb-plugin-sequential-id-record:
     devDependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../../types
       typescript:
@@ -251,13 +251,13 @@ importers:
 
   packages/plugins/rrweb-plugin-sequential-id-replay:
     devDependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../../rrweb
-      '@posthog/rrweb-plugin-sequential-id-record':
+      '@hanzo/rrweb-plugin-sequential-id-record':
         specifier: workspace:*
         version: link:../rrweb-plugin-sequential-id-record
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../../types
       typescript:
@@ -272,13 +272,13 @@ importers:
 
   packages/record:
     dependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../rrweb
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
-      '@posthog/rrweb-utils':
+      '@hanzo/rrweb-utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
@@ -300,10 +300,10 @@ importers:
 
   packages/replay:
     dependencies:
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../rrweb
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
@@ -325,13 +325,13 @@ importers:
 
   packages/rrdom:
     dependencies:
-      '@posthog/rrweb-snapshot':
+      '@hanzo/rrweb-snapshot':
         specifier: workspace:*
         version: link:../rrweb-snapshot
     devDependencies:
-      '@posthog/rrweb-types':
-        specifier: '*'
-        version: 0.0.34
+      '@hanzo/rrweb-types':
+        specifier: workspace:*
+        version: link:../types
       '@types/jsdom':
         specifier: ^20.0.0
         version: 20.0.1
@@ -362,10 +362,10 @@ importers:
 
   packages/rrdom-nodejs:
     dependencies:
-      '@posthog/rrdom':
+      '@hanzo/rrdom':
         specifier: workspace:*
         version: link:../rrdom
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
       cssom:
@@ -420,12 +420,12 @@ importers:
 
   packages/rrvideo:
     dependencies:
+      '@hanzo/rrweb-player':
+        specifier: workspace:*
+        version: link:../rrweb-player
       '@open-tech-world/cli-progress-bar':
         specifier: ^2.0.2
         version: 2.0.2
-      '@posthog/rrweb-player':
-        specifier: workspace:*
-        version: link:../rrweb-player
       fs-extra:
         specifier: ^11.1.1
         version: 11.3.2
@@ -436,7 +436,7 @@ importers:
         specifier: ^1.32.1
         version: 1.57.0
     devDependencies:
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
       '@types/fs-extra':
@@ -460,16 +460,16 @@ importers:
 
   packages/rrweb:
     dependencies:
-      '@posthog/rrdom':
+      '@hanzo/rrdom':
         specifier: workspace:*
         version: link:../rrdom
-      '@posthog/rrweb-snapshot':
+      '@hanzo/rrweb-snapshot':
         specifier: workspace:*
         version: link:../rrweb-snapshot
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
-      '@posthog/rrweb-utils':
+      '@hanzo/rrweb-utils':
         specifier: workspace:*
         version: link:../utils
       '@types/css-font-loading-module':
@@ -548,20 +548,20 @@ importers:
 
   packages/rrweb-player:
     dependencies:
-      '@posthog/rrweb-packer':
+      '@hanzo/rrweb-packer':
         specifier: workspace:*
         version: link:../packer
-      '@posthog/rrweb-replay':
+      '@hanzo/rrweb-replay':
         specifier: workspace:*
         version: link:../replay
-      '@posthog/rrweb-snapshot':
+      '@hanzo/rrweb-snapshot':
         specifier: workspace:*
         version: link:../rrweb-snapshot
       '@tsconfig/svelte':
         specifier: ^1.0.0
         version: 1.0.13
     devDependencies:
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
       '@sveltejs/adapter-auto':
@@ -622,10 +622,10 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1(postcss@8.5.6)
     devDependencies:
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
-      '@posthog/rrweb-utils':
+      '@hanzo/rrweb-utils':
         specifier: workspace:*
         version: link:../utils
       '@types/jsdom':
@@ -688,10 +688,10 @@ importers:
       '@emotion/styled':
         specifier: ^11.10.4
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.27)(react@18.3.1))(@types/react@18.3.27)(react@18.3.1)
-      '@posthog/rrweb':
+      '@hanzo/rrweb':
         specifier: workspace:*
         version: link:../rrweb
-      '@posthog/rrweb-player':
+      '@hanzo/rrweb-player':
         specifier: workspace:*
         version: link:../rrweb-player
       '@tanstack/react-table':
@@ -722,7 +722,7 @@ importers:
         specifier: ^6.4.1
         version: 6.30.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
-      '@posthog/rrweb-types':
+      '@hanzo/rrweb-types':
         specifier: workspace:*
         version: link:../types
       '@types/chrome':
@@ -1633,9 +1633,6 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-
-  '@posthog/rrweb-types@0.0.34':
-    resolution: {integrity: sha512-gM0OOstCF2W4FXQBRjGL38FAQ4rxpQTv0FQZtqf0lhJBV77Oc93EHyYvYbr4Sj6DxiSSAK+GY/nvTf569vxl2w==}
 
   '@puppeteer/browsers@2.6.1':
     resolution: {integrity: sha512-aBSREisdsGH890S2rQqK82qmQYU3uFpSH8wcZWHgHzl3LfzsxAKbLNiAG9mO8v1Y0UICBeClICxPJvyr0rcuxg==}
@@ -7413,8 +7410,6 @@ snapshots:
   '@polka/url@1.0.0-next.29': {}
 
   '@popperjs/core@2.11.8': {}
-
-  '@posthog/rrweb-types@0.0.34': {}
 
   '@puppeteer/browsers@2.6.1':
     dependencies:

@@ -1,57 +1,57 @@
 {
-    "name": "@hanzo/rrweb-record",
-    "version": "0.0.46",
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "dev": "vite build --watch",
-        "build": "pnpm turbo run prepublish",
-        "test": "vitest run",
-        "test:watch": "vitest watch",
-        "check-types": "tsc -noEmit",
-        "prepublish": "tsc -noEmit && vite build",
-        "lint": "pnpm eslint src/**/*.ts"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
-    },
-    "license": "MIT",
-    "type": "module",
-    "main": "./dist/rrweb-record.cjs",
-    "module": "./dist/rrweb-record.js",
-    "unpkg": "./dist/rrweb-record.umd.cjs",
-    "typings": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/rrweb-record.js"
-            },
-            "require": {
-                "types": "./dist/index.d.cts",
-                "default": "./dist/rrweb-record.cjs"
-            }
-        }
-    },
-    "files": [
-        "dist",
-        "package.json"
-    ],
-    "devDependencies": {
-        "puppeteer": "^23.11.1",
-        "vite": "^6.2.0",
-        "vite-plugin-dts": "^3.9.1",
-        "vitest": "^1.4.0",
-        "typescript": "^5.4.5"
-    },
-    "dependencies": {
-        "@hanzo/rrweb-types": "workspace:*",
-        "@hanzo/rrweb": "workspace:*",
-        "@hanzo/rrweb-utils": "workspace:*"
-    },
-    "browserslist": [
-        "supports es6-class"
-    ]
+  "name": "@hanzo/rrweb-record",
+  "version": "0.0.47",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "pnpm turbo run prepublish",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "check-types": "tsc -noEmit",
+    "prepublish": "tsc -noEmit && vite build",
+    "lint": "pnpm eslint src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hanzo/hanzo-rrweb.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/rrweb-record.cjs",
+  "module": "./dist/rrweb-record.js",
+  "unpkg": "./dist/rrweb-record.umd.cjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/rrweb-record.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/rrweb-record.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "devDependencies": {
+    "puppeteer": "^23.11.1",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.4.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@hanzo/rrweb-types": "workspace:*",
+    "@hanzo/rrweb": "workspace:*",
+    "@hanzo/rrweb-utils": "workspace:*"
+  },
+  "browserslist": [
+    "supports es6-class"
+  ]
 }
