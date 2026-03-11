@@ -1,18 +1,22 @@
 # LLM.md - Hanzo Rrweb
 
 ## Overview
+
 record and replay the web
 
 ## Tech Stack
+
 - **Language**: TypeScript/JavaScript
 
 ## Build & Run
+
 ```bash
 pnpm install && pnpm build
 pnpm test
 ```
 
 ## Structure
+
 ```
 rrweb/
   CHANGELOG.md
@@ -33,5 +37,6 @@ rrweb/
 ```
 
 ## Key Files
+
 - `README.md` -- Project documentation
 - `package.json` -- Dependencies and scripts
